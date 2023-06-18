@@ -15,8 +15,13 @@ License: MIT
 * Run `python manage.py migrate` to setup the database.
 * Run `python manage.py runserver` to start the development server.
 
+## Deployment
+
+Settings for automatic deployment on [Render](https://render.com/) are included.
+
 ## References
 
 * [Poetry docs](https://python-poetry.org/docs/).
 * [Django docs](https://docs.djangoproject.com/en/4.2/).
 * [Bootstrap docs](https://getbootstrap.com/docs/5.3/getting-started/introduction/).
+* [Docs for deploy Django projects on Render](https://render.com/docs/deploy-django).
