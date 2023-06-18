@@ -1,0 +1,21 @@
+.aboutme-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 500;
+}
+
+.aboutme-content {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  z-index: 499;
+}
+
+.aboutme-presentation-card-element {
+  width: 300px;
+}

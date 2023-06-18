@@ -1,0 +1,25 @@
+.fixed {
+  position: fixed;
+  /* position: absolute; */
+}
+
+.fixed-1 {
+  position: fixed;
+  /* position: absolute; */
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  overflow-y: scroll;
+}
+
+.fixed-2 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  /* overflow-y: scroll; */
+}

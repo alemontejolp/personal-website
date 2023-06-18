@@ -1,0 +1,14 @@
+# Python
+__pycache__
+
+# Environments
+venv
+.venv
+
+# Application specific file
+tmp/
+*.sqlite3
+
+# Build
+dist/
+build/

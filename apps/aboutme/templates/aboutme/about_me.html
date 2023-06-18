@@ -1,0 +1,234 @@
+{% extends "main/base.html" %}
+
+{% block title %} About me {% endblock %}
+
+{% block custom-imports %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'aboutme/css/about_me.css' %}">
+<script src="{% static 'aboutme/js/about_me.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3 aboutme-nav">
+  <div class="container">
+    <a class="navbar-brand">About Me</a>
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link" href="#scrollspyHeading-hello">Hello</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#scrollspyHeading-about-me">About Me</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#scrollspyHeading-skills">Skills</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#scrollspyHeading-projects">Notable Projects</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#scrollspyHeading-work-experience">Work Experience</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#scrollspyHeading-contact">Contact Me</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div
+  id="aboutme-content"
+  data-bs-spy="scroll"
+  data-bs-target="#navbar-example2"
+  data-bs-root-margin="0px 0px -40%"
+  data-bs-smooth-scroll="true"
+  class="aboutme-content"
+  tabindex="0"
+>
+  <div class="container p-3">
+    <!-- Section: Hello -->
+    <section>
+      <h4 id="scrollspyHeading-hello" class="text-center m-5">Hello! :)</h4>
+      <div class="d-flex justify-content-center flex-wrap pt-2 pb-2">
+        <div class="card aboutme-presentation-card-element">
+          <img src="https://avatars.githubusercontent.com/u/33400166?v=4" class="card-img-top" alt="Myself">
+          <div class="card-body text-center">
+            <h5 class="card-title">Alexis Montejo</h5>
+            <p class="card-text">Data Engineer | Software Engineer | Aspiring Computer Scientist</p>
+          </div>
+          <div class="card-body text-center">
+            <a class="btn btn-success" href="https://www.linkedin.com/in/alemontejolp/" role="button" target="_blank">
+              <i class="bi bi-linkedin"></i>
+            </a>
+            <a class="btn btn-success" href="https://github.com/alemontejolp" role="button" target="_blank">
+              <i class="bi bi-github"></i>
+            </a>
+            <a class="btn btn-success" href="https://www.instagram.com/alemontejolp/" role="button" target="_blank">
+              <i class="bi bi-instagram"></i>
+            </a>
+          </div>
+        </div>
+        <div class="d-flex align-items-center p-5 aboutme-presentation-card-element">
+          <div class="">
+            <p>Hi! I'm <b>Alexis</b>, a graduated <code>Data Engineer</code>, but with knowledge in <code>Software Engineering</code> as well.</p>
+            <p>Scroll down to know me more and see some of my experience in the data and software field.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section: About me -->
+    <section>
+      <h4 id="scrollspyHeading-about-me" class="text-center m-5">About Me</h4>
+      <div class="text-center">
+        <q>The only true wisdom is in knowing you know nothing</q>
+        <p>- Socrates -</p>
+      </div>
+      <p>I'm a Data Engineer by the Universidad del Caribe, based in Cancun, Mexico. I'm interested in science and engineering, mainly in the field of computer science and derived fields such as data engineering, data science, artificial intelligence and software engineering. This does not mean I am an expert, in fact I'm not. Nevertheless, I'm willing to feace challenges in these fields since I'm passionated about them.</p>
+
+      <p>I released and maintain an open source project product of my final degree project. It is a GIS-based information system to extract, explore and visual analyse oceanographic data. It was developed for members of the Environmental Engineering major of my University and now it is used by students as a support tool for their final degree projects and subjects related to physical oceanography, such as water energy. You can see more details about the project <a href="https://sia-information-system.github.io/sia-website" target="_blank">here in its dedicated page</a> (in spanish).</p>
+
+      <!-- <p>My main technologies are: C/C++, Python, SQL, JavaScript (Node.Js). About frameworks and libraries I use the following for data: Scikit-Learn, Pandas, NumPy, Matplotlib. Regarding to software (web) I use: Express.js, Angular, Angular Material, Bootstrap.</p> -->
+
+      <p>As a fun fact: I was a national contestant at the Olimpiada Mexicana de Informática (2017) where I competed at problem solving of competitive programming. Some <a href="http://cgc.qroo.gob.mx/por-segundo-ano-consecutivo-estudiantes-del-conalep-participan-en-la-olimpiada-mexicana-de-informatica/" target="_blank">information here</a>. Also, in 2018, I was a trainer for the next generation of contestants from my delegation. Proof <a href="https://www.facebook.com/ConalepCancunII/photos/el-trabajo-en-equipo-la-perseverancia-y-dedicaci%C3%B3n-siempre-rinde-frutos-agradabl/1481302761978909/?locale=es_MX" target="_blank">here</a>.</p>
+
+      <p>Languages: Spanish (native), English (B2).</p>
+    </section>
+    <section>
+      <!-- Section: Skills -->
+      <h4 id="scrollspyHeading-skills" class="text-center m-5">Skills</h4>
+      <p>As I said, I'm not an expert. But I have used the following technologies in multiple times so I am familiar with and I can use them professionally.</p>
+      <ul class="nav nav-tabs" id="tab-skills" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="technologies-tab" data-bs-toggle="tab" data-bs-target="#technologies-tab-pane" type="button" role="tab" aria-controls="technologies-tab-pane" aria-selected="true">Technologies</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="data-tools-tab" data-bs-toggle="tab" data-bs-target="#data-tools-tab-pane" type="button" role="tab" aria-controls="data-tools-tab-pane" aria-selected="false">Tools for data</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="web-tools-tab" data-bs-toggle="tab" data-bs-target="#web-tools-tab-pane" type="button" role="tab" aria-controls="web-tools-tab-pane" aria-selected="false">Tools for web</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="other-tab" data-bs-toggle="tab" data-bs-target="#other-tab-pane" type="button" role="tab" aria-controls="other-tab-pane" aria-selected="false">Other</button>
+        </li>
+      </ul>
+      <div class="tab-content" id="tab-skills-content">
+        <div class="tab-pane fade show active" id="technologies-tab-pane" role="tabpanel" aria-labelledby="technologies-tab" tabindex="0">
+          <div class="mt-3 h4">
+            <span class="badge bg-success">C</span>
+            <span class="badge bg-success">C++</span>
+            <span class="badge bg-success">Python</span>
+            <span class="badge bg-success">R</span>
+            <span class="badge bg-success">SQL</span>
+            <span class="badge bg-success">JavaScript</span>
+            <span class="badge bg-success">HTML</span>
+            <span class="badge bg-success">CSS</span>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="data-tools-tab-pane" role="tabpanel" aria-labelledby="data-tools-tab" tabindex="0">
+          <div class="mt-3 h4">
+            <span class="badge bg-success">Scikit-Learn</span>
+            <span class="badge bg-success">Pandas</span>
+            <span class="badge bg-success">NumPy</span>
+            <span class="badge bg-success">Matplotlib</span>
+            <span class="badge bg-success">Seaborn</span>
+            <span class="badge bg-success">dplyr</span>
+            <span class="badge bg-success">ggplot</span>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="web-tools-tab-pane" role="tabpanel" aria-labelledby="web-tools-tab" tabindex="0">
+          <div class="mt-3 h4">
+            <span class="badge bg-success">Express.js</span>
+            <span class="badge bg-success">Angular</span>
+            <span class="badge bg-success">Angular Material</span>
+            <span class="badge bg-success">Bootstrap</span>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="other-tab-pane" role="tabpanel" aria-labelledby="other-tab" tabindex="0">
+          <div class="mt-3 h4">
+            <span class="badge bg-success">Git</span>
+            <span class="badge bg-success">Linux</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section: Notable Projects -->
+    <section>
+      <h4 id="scrollspyHeading-projects" class="text-center m-5">Notable Projects</h4>
+      <div class="d-flex justify-content-center flex-wrap">
+        {% if projects %}
+          {% for project in projects %}
+          <div class="card m-1 aboutme-presentation-card-element">
+            <img src="{{ project.img_src }}" class="card-img-top" alt="{{ project.title }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ project.title }}</h5>
+              <p class="card-text">{{ project.short_description }}</p>
+              <!-- <a href="#" class="btn btn-primary">See details</a> -->
+            </div>
+            <div class="card-body d-flex align-items-end">
+              <a href="{% url 'apps.aboutme.project_details' project.id %}" class="btn btn-primary">See details</a>
+            </div>
+          </div>
+          {% endfor %}
+        {% else %}
+          <p>No projects to show here by now. :)</p>
+        {% endif %}
+        <!-- <div class="card m-1" style="width: 300px;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div> -->
+      </div>
+    </section>
+    <section>
+      <!-- Section: Work experience -->
+      <h4 id="scrollspyHeading-work-experience" class="text-center m-5">Work Experience</h4>
+      <div class="accordion" id="accordionPanelsStayOpenExample">
+        {% if jobs %}
+          {% for job in jobs %}
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse-{{ job.id }}" aria-expanded="false" aria-controls="panelsStayOpen-collapse-{{ job.id }}">
+                  {{ job.company_name }} - {{ job.position_name }} ({{ job.date_start | date:"M, Y" }} - {{ job.date_end | date:"M, Y" }})
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapse-{{ job.id }}" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  {{ job.description | safe }}
+                  <!-- <pre>{{ job.description }}</pre> -->
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+          <p class="text-center">Nothing to show by now. :)</p>
+        {% endif %}
+        <!-- <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+              Accordion Item #2
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </section>
+    <section>
+      <!-- Section: contact -->
+      <h4 id="scrollspyHeading-contact" class="text-center m-5">Contact Me</h4>
+      <div class="text-center">
+        <p>Do you wanna chat or email me? My email is in the contact information section of my LinkedIn. Here is a direct link to my profile for you. :)</p>
+        <a class="btn btn-success mb-3" href="https://www.linkedin.com/in/alemontejolp/" role="button" target="_blank">
+          <i class="bi bi-linkedin"></i>
+        </a>
+        <p>Links for my other social media are in my presentation card on top of this page.</p>
+      </div>
+    </section>
+  </div>
+  {% include 'main/footer.html' %}
+</div>
+{% endblock %}
