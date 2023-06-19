@@ -15,10 +15,18 @@ import os
 from pathlib import Path
 # Third party
 import dj_database_url
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+load_dotenv(dotenv_path=Path(BASE_DIR, '.env'))
+
+def is_debug_mode():
+    DEBUG_MODE = os.environ.get('DEBUG_MODE')
+    if DEBUG_MODE == 'false' or 'RENDER' in os.environ:
+        return False
+    return True
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -29,7 +37,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='django-insecure-axm^5n_=55ez0
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
-DEBUG = 'RENDER' not in os.environ
+DEBUG = is_debug_mode()
 
 ALLOWED_HOSTS = []
 
@@ -85,19 +93,18 @@ WSGI_APPLICATION = 'website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
-if not DEBUG:
-    DATABASES['default'] = dj_database_url.config(
+    'default': dj_database_url.config(
         # Feel free to alter this value to suit your needs.
-        default='postgresql://postgres:postgres@localhost:5432/mysite',
-        conn_max_age=600
+        default=f'sqlite:///{BASE_DIR}/db.sqlite3'
     )
+}
 
 
 # Password validation
@@ -142,6 +149,7 @@ STATICFILES_DIRS = [
 
 # Following settings only make sense on production and may break development environments.
 if not DEBUG:
+    # CONFIGURATION FOR DEPLOYMENT ON RENDER.
     # Tell Django to copy statics to the `staticfiles` directory
     # in your application directory on Render.
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

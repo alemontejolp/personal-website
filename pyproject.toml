@@ -11,10 +11,11 @@ packages = [{include = "website"}]
 python = "^3.8"
 Django = "^4.2.2"
 markdown = "^3.4.3"
-dj-database-url = "^2.0.0"
-psycopg2-binary = "^2.9.6"
 whitenoise = {extras = ["brotli"], version = "^6.5.0"}
 gunicorn = "^20.1.0"
+dj-database-url = "^2.0.0"
+mysqlclient = "^2.1.1"
+python-dotenv = "^1.0.0"
 
 
 [build-system]
