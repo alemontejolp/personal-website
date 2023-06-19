@@ -19,18 +19,20 @@ License: MIT
 
 Settings for manual deployment on [Render](https://render.com/) are included [4]. See the deployment manual for Django apps.
 
-`DEBUG` variable is set to true by default. But you can set it to false through the `DEBUG_MODE` environment variable set to `false`.
+`DEBUG` variable is set to true by default. But you can set it to false through the `DEBUG_MODE` environment variable set to `false`. It's automatically set to false when running on Render.
 
-This project uses `DJ-Database-URL` to easily configure the database connection by a `DATABASE_URL` environment variable [5]. Just set that environment variable for the project to use your desired database. If it's not set, the project uses the default `db.sqlite3` file as DB.
+This project uses `DJ-Database-URL` to easily configure the database connection by a `DATABASE_URL` environment variable [5]. Just set that environment variable with a connection string for the project to use your desired database. If it's not set, the project uses the default `db.sqlite3` file as DB.
 
-This project is intended to be used with a MySQL database on production, so the driver is listed in the dependencies. If you want to use other DBMS, you will need to install a proper driver. See the supported drivers of `DJ-Database-URL` [5]. If not supported, you will probably need to change the definition of the `DATABASES` configuration variable.
+This project is intended to be used with a Postgres or MySQL database on production, so the drivers are listed in the dependencies. If you want to use other DBMS, you will need to install a proper driver. See the drivers that `DJ-Database-URL` supports [5]. If not supported, you will probably need to change the definition of the `DATABASES` configuration variable.
+
+**IMPORTANT** If deploying on Render, for any change in dependencies, run the command in `export-dependencies.sh` to generate a `requirements.txt` file. For now, Render doesn't support the version of Poetry used in this project, so the `requirements.txt` is used to install dependies.
 
 ## Development
 
 To make the environment variables management easier, the package `python-dotenv` is used [6]. So in your local environment, you can place a `.env` file at the root of the project and set needed variables. This way you could have:
 
 ```
-DATABASE_URL=mysql://USER:PASSWORD@HOST:PORT/NAME
+DATABASE_URL=postgres://USER:PASSWORD@HOST:PORT/NAME
 ```
 
 and connect with your development (or even production) database from your local environment, but you can always use the default sqlite db.
