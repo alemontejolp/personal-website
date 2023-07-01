@@ -13,6 +13,3 @@ tmp/
 # Build
 dist/
 build/
-
-# Other
-docker-compose.*
